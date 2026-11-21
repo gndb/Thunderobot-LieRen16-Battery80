@@ -16,7 +16,7 @@ flowchart TD
   B --> K[停止并删除本次临时驱动登记]
 ```
 
-设置参数后EC持续执行，窗口每15秒刷新，关闭后不再刷新。正常退出不取消成功设置的策略；驱动消失不等于策略消失。
+设置参数后由 EC 执行策略，窗口每 15 秒刷新。正常退出停止监测和临时驱动，不主动取消策略。原机的 EC 状态在重新接电时曾恢复默认，退出的程序不会自动重设。[电源事件记录](PROJECT_STATUS.md)
 
 tools/battery_panel.py负责UI、队列、日志和监督；battery_panel_core.py负责固定策略和完整状态验证；nlya_pmc2_query.py负责固定地址读取；nlya_policy_trial.py提供当前面板导入的传输、遥测与恢复判据；inpout_status_probe.py负责签名与服务生命周期。widgets与dpi模块只负责绘制。
 

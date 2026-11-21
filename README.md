@@ -1,6 +1,6 @@
 # 雷神猎刃16 · THUNDEROBOT LieRen 16 Battery80
 
-[English](README.en.md) · [下载 Windows 运行版](https://github.com/gndb/Thunderobot-LieRen16-Battery80/releases/tag/v0.2.1) · [本机实测型号与记录](docs/TESTED_MODEL.md)
+[English](README.en.md) · [下载 Windows 运行版](https://github.com/gndb/Thunderobot-LieRen16-Battery80/releases/tag/v0.2.1) · [项目进展与已知限制](docs/PROJECT_STATUS.md)
 
 **雷神猎刃16 / THUNDEROBOT LieRen 16（系统型号 R16）**，通过原厂 EC 策略管理固定80%目标。LieRen 是“猎刃”的拼音名称，便于中英文检索；不是对其他海外商品型号的兼容承诺。
 
@@ -23,7 +23,7 @@
 
 首次确认部署目录及临时签名驱动登记，然后点击“打开真实面板”并接受UAC。面板启动只读取状态；开启80%需要单独点击。只想看外观可选择“查看模拟演示”，不加载驱动。
 
-高于80%时原厂策略可能主动放电，低于80%允许充电。成功开启后关闭窗口继续保持；恢复正常充电需重新打开点击“取消维护”。不是75/80双阈值，不保证睡眠、重启或掉电保持。
+高于 80% 时原厂策略可能主动放电，低于目标时允许充电。正常关闭窗口不会发送取消命令。**原机已复现拔插电源后策略丢失并恢复充电。** 重新接电、唤醒或重启后请打开面板读回状态，维护已关闭时可手动重开。需要恢复默认充电时，用面板“取消维护”。[验收记录](docs/VALIDATION.md)
 
 运行包保留实际身份、驱动签名/哈希、固定协议、故障日志与恢复检查。内置分析记录只记录逆向来源及结论，**不能证明运行EC镜像全哈希一致**。不包含BIOS/EC固件字节。
 

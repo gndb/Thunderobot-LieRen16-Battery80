@@ -23,7 +23,8 @@
 |---|---|
 | 设置与回读 | 原机生产版本已设置目标80%，三次回读D0 |
 | 取消维护 | 已执行取消，Learn请求清除、恢复原厂默认管理；不保证接近满电时立刻充电 |
-| 关闭窗口 | 成功开启后关闭、再打开仍目标80%；不推导重启保持 |
+| 关闭窗口 | 成功开启后关闭，再打开仍为目标 80% |
+| 拔插电源 | 2026-10-13 复现保持失败。目标由 D0 回到默认 3C，SOC 约 93% 时恢复充电 |
 | 早期80%保持 | 五次Windows采样约一分钟，80%、0 W、容量50.682 Wh不变 |
 | 后续采样1 | 2026-10-05 20:26:57 UTC：Windows79%、EC80%、AC在线、充电0 W、放电0 W、容量50425 mWh |
 | 后续采样2 | 2026-10-05 20:49:30 UTC：Windows79%、EC80%、AC在线、充电0 W、放电0 W、容量50395 mWh |
@@ -37,3 +38,5 @@
 ## English reference
 
 The user-tested machine is **THUNDEROBOT LieRen 16 (雷神猎刃16), Windows model R16**, motherboard NLYA, BIOS TP181, IT5570 revision 07, runtime build C009A0, Intel Core i9-13900HX. Full SKU/GPU is unconfirmed. Setting, read-back, cancel and close/reopen retention were verified on the original production installation. Saved snapshots show Windows 79%, EC 80%, AC connected and zero charging/discharging power. This is not continuous 30-minute evidence or new portable-package hardware acceptance. Other configurations require independent compatibility verification; do not bypass the guards.
+
+AC unplug/replug cleared the policy in a separate observation on this test machine. See [project status](PROJECT_STATUS.md) for the distinction between closing the window and power events.

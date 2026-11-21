@@ -1,6 +1,6 @@
 # THUNDEROBOT LieRen 16 (雷神猎刃16 / R16) Battery80
 
-[中文](README.md) · [Download Windows runtime](https://github.com/gndb/Thunderobot-LieRen16-Battery80/releases/tag/v0.2.1) · [Tested machine and evidence](docs/TESTED_MODEL.md)
+[中文](README.md) · [Download Windows runtime](https://github.com/gndb/Thunderobot-LieRen16-Battery80/releases/tag/v0.2.1) · [Project status and known limits](docs/PROJECT_STATUS.md)
 
 For **雷神猎刃16 / THUNDEROBOT LieRen 16 (system model R16)**. LieRen is the pinyin spelling of the Chinese product name, not a claim of compatibility with another international product family.
 
@@ -10,7 +10,7 @@ Windows x64 native 80% battery maintenance panel for **THUNDEROBOT NLYA / TP181 
 
 Download the runtime ZIP from GitHub Releases, extract the entire folder, and double-click `BatteryPanel.exe`. No Python installation, PowerShell7, or ROM import is required. Keep `_internal` and `drivers` next to the exe.
 
-Confirm the deployment folder and temporary signed driver use; choose Open Panel and accept UAC. Launch reads state only; enabling is a separate action. Simulation preview requires no driver. Above 80% the OEM policy may actively discharge. Successful close keeps the policy; reopen and cancel maintenance to restore default charging.
+Confirm the deployment folder and temporary signed driver use, then choose Open Panel and accept UAC. Launch reads state only. Enable the policy separately. Simulation preview requires no driver. The OEM policy may actively discharge the battery above 80%. Closing the panel does not cancel an enabled policy. **Unplugging and reconnecting AC cleared the policy on the tested machine.** Reopen the panel after reconnecting power, waking, or rebooting. Check the current state before enabling 80% again. Use Cancel Maintenance to return to default charging.
 
 The embedded analysis record is provenance, not cryptographic attestation of the running EC image. Hardware identity, driver signature/hash, fixed commands, fault journals and recovery gates remain. No BIOS/EC firmware bytes are distributed.
 
